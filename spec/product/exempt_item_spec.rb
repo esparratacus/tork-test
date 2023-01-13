@@ -1,10 +1,9 @@
-require 'exempt_item'
+require 'product/exempt_item'
 
-describe ExemptItem do
-
+describe Product::ExemptItem do
+    let(:item) { Product::ExemptItem.new(47.50,1) }
     describe '#sales_tax' do
         it 'should always return 0' do
-            item = ExemptItem.new(1,47.50)
             expect(item.sales_tax).to eql(0)
         end
     end
@@ -12,14 +11,13 @@ describe ExemptItem do
     describe '#total' do
         context 'when the item is not imported' do
             it 'should keep shelf price value' do
-                item = ExemptItem.new(47.50,1)
                 expect(item.total).to eql(47.50)
             end
         end
 
         context 'when the item is imported' do
+            let(:item) { Product::ExemptItem.new(47.50,1,true) }
             it 'should add import tax to shelf price value' do
-                item = ExemptItem.new(47.50,1,true)
                 expect(item.import_tax).to eql(2.35)
                 expect(item.total).to eql(49.85)
             end

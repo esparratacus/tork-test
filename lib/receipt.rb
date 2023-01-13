@@ -1,5 +1,5 @@
-require 'item'
-require 'exempt_item'
+require 'product/item'
+require 'product/exempt_item'
 
 class Receipt
 

@@ -1,5 +1,5 @@
-require 'item'
-require 'exempt_item'
+require 'product/item'
+require 'product/exempt_item'
 class ItemParser
 
     EXEMPT_ITEMS = [
@@ -30,10 +30,10 @@ class ItemParser
 
     def self.set_item_class(item_name)
         if EXEMPT_ITEMS.include?(item_name)
-            return ExemptItem 
+            return Product::ExemptItem
         else
             
-            return Item
+            return Product::Item
         end
     end
 end

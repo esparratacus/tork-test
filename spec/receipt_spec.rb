@@ -1,12 +1,12 @@
 require 'receipt'
 
 describe Receipt do
-    let(:input_1)  {[ExemptItem.new(12.49,2,false , 'book'), Item.new(14.99,1,false, 'music CD'), ExemptItem.new(0.85,1,false, 'chocolate bar')]}
-    let(:input_2) { [ExemptItem.new(10.00,1,true, 'box of chocolates'), Item.new(47.50,1,true, 'bottle of perfume')] }
-    let(:input_3) { [Item.new(27.99,1,true,'bottle of perfume'), 
-                    Item.new(18.99,1,false, 'bottle of perfume'), 
-                    ExemptItem.new(9.75,1, false, 'packet of headache pills'),
-                    ExemptItem.new(11.25,3,true, 'boxes of chocolate')]}
+    let(:input_1)  {[Product::ExemptItem.new(12.49,2,false , 'book'), Product::Item.new(14.99,1,false, 'music CD'), Product::ExemptItem.new(0.85,1,false, 'chocolate bar')]}
+    let(:input_2) { [Product::ExemptItem.new(10.00,1,true, 'box of chocolates'), Product::Item.new(47.50,1,true, 'bottle of perfume')] }
+    let(:input_3) { [Product::Item.new(27.99,1,true,'bottle of perfume'), 
+                    Product::Item.new(18.99,1,false, 'bottle of perfume'), 
+                    Product::ExemptItem.new(9.75,1, false, 'packet of headache pills'),
+                    Product::ExemptItem.new(11.25,3,true, 'boxes of chocolate')]}
     context 'input 1' do
         describe "total taxes" do
             it "returns the total amount of taxes" do
