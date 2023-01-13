@@ -13,19 +13,19 @@ module Product
         end
     
         def sales_tax
-            round_number(price * SALES_TAX_RATE)
+            round_number((price * SALES_TAX_RATE).round(2))
         end
     
         def import_tax
-            is_imported? ? round_number(price * IMPORT_TAX_RATE) : 0
+            is_imported? ? round_number((price * IMPORT_TAX_RATE).round(2)) : 0
         end
     
         def total_taxes
-            (sales_tax + import_tax) * qty
+            round_number((sales_tax + import_tax) * qty)
         end
     
         def total
-            (price * qty) + total_taxes
+            (price * qty).round(2) + total_taxes
         end
     
         def is_imported?
@@ -33,12 +33,7 @@ module Product
         end
     
         def round_number(number)
-            remainder = number % 0.05
-            if remainder >= 0.025
-              return (number - remainder + 0.05).round(2)
-            else
-              return (number - remainder).round(2)
-            end
+            (number * (1/0.05)).ceil/(1/0.05)
         end
     
         def to_s

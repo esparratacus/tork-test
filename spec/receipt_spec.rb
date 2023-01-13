@@ -25,8 +25,7 @@ describe Receipt do
         describe "total taxes" do
             it "returns the total amount of taxes" do
                 receipt = described_class.new(input_2)
-                receipt.print
-                expect(receipt.sale_taxes).to eql(7.6)
+                expect(receipt.sale_taxes).to eql(7.65)
             end
         end
         describe "total sale" do
@@ -36,11 +35,12 @@ describe Receipt do
             end
         end
     end
-    context 'input 2' do
+    context 'input 3' do
         describe "total taxes" do
             it "returns the total amount of taxes" do
                 receipt = described_class.new(input_3)
                 receipt.print
+                input_3.each { |i| puts "taxes #{i.name}: #{i.total_taxes}" }
                 expect(receipt.sale_taxes).to eql(7.90)
             end
         end

@@ -7,7 +7,7 @@ describe ItemParser do
             let(:item) { described_class.create_item('1 imported bottle of perfume at 27.99') }
 
             it 'creates an item according to a string' do
-                expect(item).to be_an_instance_of Item
+                expect(item).to be_an_instance_of Product::Item
             end
 
             it 'should have a shelff price of 27.99' do
@@ -23,7 +23,7 @@ describe ItemParser do
             let(:item) { described_class.create_item('1 imported packet of headache pills at 27.99') }
 
             it 'creates an item according to a string' do
-                expect(item).to be_an_instance_of ExemptItem
+                expect(item).to be_an_instance_of Product::ExemptItem
             end
 
             it 'should have a shelff price of 27.99' do
