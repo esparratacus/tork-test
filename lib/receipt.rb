@@ -20,7 +20,7 @@ class Receipt
     end
 
     def total_sale
-        (items.sum(&:total)).round 2
+        items.sum(&:total)
     end
 
 end
