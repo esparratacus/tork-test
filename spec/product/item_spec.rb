@@ -15,7 +15,7 @@ describe Product::Item do
         context 'import tax apply' do
             it 'calculates sales tax accordingly' do
                 item = Product::Item.new(47.50,1,true)
-                expect(item.import_tax).to eq 2.35 
+                expect(item.import_tax).to eq 2.4
             end
         end
         context "import tax don't apply" do
@@ -30,7 +30,7 @@ describe Product::Item do
         context 'imported item' do
             it 'should return a string representation of the object' do
                 item = Product::Item.new(47.50,1, true, 'bottle of perfume')
-                expect(item.to_s).to eql('1 imported bottle of perfume: 54.60')
+                expect(item.to_s).to eql('1 imported bottle of perfume: 54.65')
             end
         end
         context 'national item' do

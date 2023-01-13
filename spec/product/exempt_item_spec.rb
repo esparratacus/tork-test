@@ -18,8 +18,8 @@ describe Product::ExemptItem do
         context 'when the item is imported' do
             let(:item) { Product::ExemptItem.new(47.50,1,true) }
             it 'should add import tax to shelf price value' do
-                expect(item.import_tax).to eql(2.35)
-                expect(item.total).to eql(49.85)
+                expect(item.import_tax).to eql(2.40)
+                expect(item.total).to eql(49.90)
             end
         end
     end
