@@ -1,11 +1,13 @@
 require 'product/item'
 require 'product/exempt_item'
+
 class ItemParser
 
     EXEMPT_ITEMS = [
         'book',
         'chocolate bar',
         'box of chocolates',
+        'boxes of chocolates',
         'packet of headache pills'
     ]
 
